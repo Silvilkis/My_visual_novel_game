@@ -131,9 +131,9 @@ class ChoiceWithButtons:
 
         button_x_coordinate = self.bottom_label.rectangle.x + self.bottom_label.txt_margins
         button_y_coordinate = self.bottom_label.new_line_position + 20
-        width = self.bottom_label.rectangle.width - 2 * self.bottom_label.txt_margins
-        self.choice1_button = Button(button_x_coordinate, button_y_coordinate, width, button_bg_color, text_color, choice1_bg_color, choice1_text)
-        self.choice2_button = Button(button_x_coordinate, button_y_coordinate + self.choice1_button.rectangle.height + 15, width, button_bg_color, text_color, choice2_bg_color, choice2_text)
+        button_width = self.bottom_label.rectangle.width - 2 * self.bottom_label.txt_margins
+        self.choice1_button = Button(button_x_coordinate, button_y_coordinate, button_width, button_bg_color, text_color, choice1_bg_color, choice1_text)
+        self.choice2_button = Button(button_x_coordinate, button_y_coordinate + self.choice1_button.rectangle.height + 15, button_width, button_bg_color, text_color, choice2_bg_color, choice2_text)
 
     def draw_choice(self):
         self.bottom_label.bottom_label_draw(self.screen)
