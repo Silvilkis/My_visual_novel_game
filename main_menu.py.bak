@@ -4,6 +4,7 @@ from pygame.locals import *
 from game_loop import *
 from utility import *
 
+clock = pygame.time.Clock()
 pygame.init()
 
 WHITE = (255, 255, 255)
