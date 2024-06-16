@@ -65,6 +65,21 @@ class Button:
         self.rectangle.height = self.txt_margins * 2 + len(self.line_rectangles) * self.line_surfaces[0].get_height()
 
 
+class Label:
+    def __init__(self, x, y, width, height, text=''):
+        self.rect = pygame.Rect(x, y, width, height)
+        self.text = text
+        self.color_text = text_color
+        self.surface = pygame.Surface((width, height), pygame.SRCALPHA)
+        self.surface.fill(label_background_color)
+
+    def draw(self, win):
+        win.blit(self.surface, (self.rect.x, self.rect.y))
+        if self.text != '':
+            font = pygame.font.SysFont(None, 25)
+            text = font.render(self.text, 1, self.color_text)
+            win.blit(text, (self.rect.x, self.rect.y))
+
 class BottomLabel:
     def __init__(self, screen, text=''):
         screen_width, screen_height = screen.get_size()
